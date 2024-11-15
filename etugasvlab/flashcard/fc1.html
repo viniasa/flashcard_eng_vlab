@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary Flashcards</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="Logo" class="logo-header" />
+      <h1>Vocabulary Flashcards</h1>
+    </header>
+
+    <div id="card-info">
+      <p>Total: <span id="total-cards">0</span></p>
+      <p>Selesai: <span id="completed-cards">0</span></p>
+      <p>Tersisa: <span id="remaining-cards">0</span></p>
+    </div>
+
+    <div class="flashcard-container">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front" id="card-front"></div>
+          <div class="flashcard-back" id="card-back"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="understood">Saya Mengerti</button>
+      <button id="not-understood">Belum Mengerti</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <div class="add-flashcard">
+      <h2>Tambah Flashcard Baru</h2>
+      <input
+        type="text"
+        id="question"
+        placeholder="Masukkan pertanyaan"
+        required
+      />
+      <input type="text" id="answer" placeholder="Masukkan jawaban" required />
+      <button id="add-card">Tambah Flashcard</button>
+    </div>
+
+    <div class="vocab-table">
+      <h2>Daftar Vocab</h2>
+      <table id="vocab-list">
+        <thead>
+          <tr>
+            <th>Pertanyaan</th>
+            <th>Jawaban</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Vocab -->
+        </tbody>
+      </table>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="scriptfc.js" type="module"></script>
+  </body>
+</html>

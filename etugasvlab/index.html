@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pembelajaran</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<header>
+  <a id="signoutbutton" href="./logreg/index.html">Sign Out</a>
+  <img src="logo.png" alt="Logo" class="logo-header">
+  <h1>Welcome to Your English Course</h1>
+</header>
+
+  <!-- Grid Materi -->
+<div class="grid-container">
+  <div class="card filled" id="materi-1">
+    <img src="logo.png" class="logo-center" alt="Logo">
+    <h3 class="subject-title">Unity and Coherence</h3> 
+    <div class="sub-cards">
+      <a href="/rangkuman/rangkuman.html" class="sub-card">Rangkuman</a>
+      <a href="/flashcard/fc1.html" class="sub-card">Flashcard</a>
+      <a href="/latihan/latihan.html" class="sub-card">Latihan</a>
+    </div>
+  </div>
+
+  <!-- Kotak Materi Kosong -->
+<div class="card empty">
+  <img src="logo.png" class="logo-center" alt="Logo">
+  <p>Course belum ada</p>
+</div>
+<div class="card empty">
+  <img src="logo.png" class="logo-center" alt="Logo">
+  <p>Course belum ada</p>
+</div>
+<div class="card empty">
+  <img src="logo.png" class="logo-center" alt="Logo">
+  <p>Course belum ada</p>
+</div>
+<div class="card empty">
+  <img src="logo.png" class="logo-center" alt="Logo">
+  <p>Course belum ada</p>
+</div>
+</div>
+
+<div id="popup-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Konten belum tersedia. Silakan kembali nanti!</p>
+    <button id="close-modal">Tutup</button>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div id="progress-bar" class="progress-bar"></div>
+  <span id="progress-label">0%</span>
+</div>
+
+<button id="theme-toggle" class="theme-toggle">
+  <span id="theme-icon">🌞</span>
+</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="script.js" type="module"></script>
+
+</body>
+</html>

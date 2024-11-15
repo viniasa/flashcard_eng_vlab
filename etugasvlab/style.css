@@ -1,0 +1,437 @@
+/* Color Palette */
+:root {
+    --color1: #006d77;
+    --color2: #83c5be;
+    --color3: #edf6f9;
+    --color4: #ffddd2;
+    --color5: #e29578;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+header {
+  position: relative;
+  background: 
+    linear-gradient(to right, rgba(0, 109, 119, 0.7), rgba(131, 197, 190, 0.7)),
+    url('books.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 48px;
+  color: var(--color1);
+  text-shadow: 
+    -2px -2px 0 #000, 
+    2px -2px 0 #000,  
+    -2px 2px 0 #000,   
+    2px 2px 0 #000;    
+}
+
+.logo-header {
+  width: 80px;
+  margin-bottom: 10px;
+}
+  
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 15px;
+  padding: 20px;
+  align-items: start; 
+}
+
+.card.filled {
+  order: 1; 
+}
+
+.card.empty {
+  order: 2; 
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.card {
+  background-color: var(--color5);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.sub-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sub-card {
+  background-color: var(--color2);
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.sub-card:hover {
+  background-color: var(--color1);
+}
+
+.card.empty p {
+  font-size: 18px;
+  color: grey;
+  text-align: center;
+}
+
+.card:hover {
+  background-color: var(--color4);
+}
+
+.empty {
+  background-color: var(--color4);
+  cursor: default;
+}
+
+
+.logo-center {
+  width: 55px;
+  opacity: 0.3;
+  position: absolute;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.sidebar .unity-coherence {
+  background-color: #f0f0f0; /* Ganti dengan warna netral yang sedikit lebih gelap atau terang */
+  padding: 10px; /* Tambahkan padding untuk estetika */
+}
+
+.sidebar .unity-coherence:hover {
+  background-color: #e0e0e0; /* Warna latar belakang saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek kedalaman */
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+#close-modal {
+  margin-top: 10px;
+}
+
+.progress-container {
+  width: 80%;
+  background-color: var(--color3);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+  height: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--color1);
+  width: 0%;
+  transition: width 0.5s;
+  border-radius: 20px;
+}
+
+#progress-label {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: black;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: var(--color3);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.9);
+}
+
+/* Animasi Perubahan Warna Background */
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1a1a2e;
+  color: white;
+}
+
+.dark-mode .card {
+  background-color: #222831;
+}
+
+.dark-mode .sub-card {
+  background-color: #393e46;
+}
+
+.dark-mode .theme-toggle {
+  background-color: #393e46;
+}
+
+
+      /* Flashcard Container */
+.flashcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.flashcard {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.flashcard-front {
+  background-color: #c2e7eb;
+  color: #006d77;
+}
+
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #ffddd2;
+  color: #e78e6d;
+  border-radius: 8px;
+  font-weight: bold;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.controls button {
+  padding: 12px 20px;
+  background-color: var(--color1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+  background-color: var(--color2);
+  transform: scale(1.05);
+}
+
+.vocab-table {
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: var(--color3);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#vocab-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#vocab-list th, #vocab-list td {
+  border: 1px solid var(--color1);
+  padding: 10px;
+  text-align: left;
+}
+
+#vocab-list th {
+  background-color: var(--color1);
+  color: white;
+}
+
+.add-flashcard {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid var(--color1);
+  border-radius: 5px;
+  background-color: var(--color3);
+}
+
+.add-flashcard input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.add-flashcard button {
+  padding: 10px;
+  background-color: var(--color1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-flashcard button:hover {
+  background-color: var(--color2);
+}
+
+#card-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+
+#card-info p {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color1);
+}
+
+#card-info span {
+  font-weight: normal;
+  color: var(--color5);
+}
+
+.subject-title {
+  font-size: 20px; 
+  margin-bottom: 10px;
+  color: var(--color2); 
+  text-align: center; 
+
+  text-shadow: 
+    -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black; 
+  }
+
+  
+  #signoutbutton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    background-color: #009579; 
+    color: black;
+    border: 2px solid #fff; 
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  #signoutbutton:hover {
+    background-color: #006653; 
+  }
